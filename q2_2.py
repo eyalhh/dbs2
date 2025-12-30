@@ -9,13 +9,14 @@ if __name__ == "__main__":
         port="3307",
     )
     cursor = mydb.cursor()
-    # creating table for sizes, european and us numbers.
-    # us number is optional right now.
+    # creating table for sizes, european and US numbers.
+    # us number is optional (as assignment says).
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS size (
-        size_id INT PRIMARY KEY,
+        size_id INT,
         european_number TINYINT NOT NULL,
-        us_number TINYINT
+        us_number TINYINT,
+        PRIMARY KEY (size_id)
     )
     """)
     # !!!Commit the transaction to save the changes to the database!!!

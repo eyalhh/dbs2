@@ -10,7 +10,7 @@ if __name__ == "__main__":
     )
     cursor = mydb.cursor()
     # linking orders to customers.
-    # tells us who made which order.
+    # tells us who made which order. This enfroces that a customer that ordered has to actually be a customer
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS order_customer (
         order_id INT,

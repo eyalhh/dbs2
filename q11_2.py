@@ -9,8 +9,7 @@ if __name__ == "__main__":
         port="3307",
     )
     cursor = mydb.cursor()
-    # selecting from the sales view.
-    # showing the sales summary ordered by revenue.
+    # Just selecting everything from our previous view
     cursor.execute("""
     SELECT *
     FROM total_sales_per_shoe

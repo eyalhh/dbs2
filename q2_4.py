@@ -13,10 +13,11 @@ if __name__ == "__main__":
     # linking to shoe table so we know which model it is.
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS upcoming (
-        special_id INT PRIMARY KEY,
-        shoe_id INT NOT NULL,
+        special_id INT,
         collection_name VARCHAR(31),
         release_date DATETIME,
+        shoe_id INT NOT NULL,
+        PRIMARY KEY (special_id),
         FOREIGN KEY (shoe_id) REFERENCES shoe(shoe_id)
     )
     """)

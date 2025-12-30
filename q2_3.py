@@ -9,8 +9,7 @@ if __name__ == "__main__":
         port="3307",
     )
     cursor = mydb.cursor()
-    # linking table for shoes and sizes, many to many relation.
-    # this connects the shoe id with the size id.
+    # linking table for shoes and sizes where shoe_id and size_id refer to their equivs in the other tables.
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS shoe_size (
         shoe_id INT,

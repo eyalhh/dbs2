@@ -9,8 +9,11 @@ if __name__ == "__main__":
         port="3307",
     )
     cursor = mydb.cursor()
-    # creating view for total sales per shoe.
-    # summarizing revenue for each shoe model.
+    # We're creating a view called total_sales_per_shoe.
+    # This view returns a table with 3 columns - shoe_id, name, and the total revenue from this shoe.
+    # We find the total revenue from a given shoe with a JOIN on the shoes and order_shoes
+    # this creates a column where there are only shoes that have been ordered.
+    # We take the sum of their prices (because it will be in the JOIN table) and put it in total_revenue
     cursor.execute("""
     CREATE OR REPLACE VIEW total_sales_per_shoe AS
     SELECT 

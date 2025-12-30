@@ -13,16 +13,9 @@ if __name__ == "__main__":
     # countries where we have stores or ship to.
     cursor.execute("""
     INSERT INTO country (country_id, country_name) VALUES
-    (1, 'Israel'),
-    (2, 'Canada'),
-    (3, 'United States'),
-    (4, 'Germany'),
-    (5, 'France'),
-    (6, 'Japan'),
-    (7, 'Australia'),
-    (8, 'Italy'),
-    (9, 'Spain'),
-    (10, 'Brazil')
+    (1, 'Israel'), (2, 'Canada'), (3, 'United States'), (4, 'Germany'),
+    (5, 'France'), (6, 'Japan'), (7, 'Australia'), (8, 'Italy'),
+    (9, 'Spain'), (10, 'Brazil')
     """)
     # !!!Commit the transaction to save the changes to the database!!!
     mydb.commit()

@@ -9,8 +9,9 @@ if __name__ == "__main__":
         port="3307",
     )
     cursor = mydb.cursor()
-    # finding shoes that never got ordered.
-    # checking for unsold inventory items.
+    # Here unlike q11 we use a left join between order_shoe and shoe.
+    # Therefore what will happen is that the shoes that have never been ordered with have a NULL order_id.
+    # so we can select only them with a where
     cursor.execute("""
     SELECT DISTINCT s.shoe_name
     FROM shoe s

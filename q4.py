@@ -10,7 +10,7 @@ if __name__ == "__main__":
     )
     cursor = mydb.cursor()
     # adding uk number column to size table.
-    # we need this to support the uk market expansion.
+    # we need this to support the uk market expansion
     cursor.execute("""
     ALTER TABLE size
     ADD COLUMN uk_number TINYINT

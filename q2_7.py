@@ -13,13 +13,15 @@ if __name__ == "__main__":
     # id must be exactly 9 chars or it wont accept.
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS customer (
-        customer_id VARCHAR(15) PRIMARY KEY,
+        customer_id VARCHAR(15),
         first_name VARCHAR(31) NOT NULL,
         last_name VARCHAR(31) NOT NULL,
-        email VARCHAR(255) UNIQUE NOT NULL,
+        email VARCHAR(255) NOT NULL,
         city_id INT NOT NULL,
-        CHECK (LENGTH(customer_id) = 9),
-        FOREIGN KEY (city_id) REFERENCES city(city_id)
+        PRIMARY KEY (customer_id),
+        UNIQUE (email),
+        FOREIGN KEY (city_id) REFERENCES city(city_id),
+        CHECK (LENGTH(customer_id) = 9)
     )
     """)
     # !!!Commit the transaction to save the changes to the database!!!

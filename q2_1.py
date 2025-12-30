@@ -10,12 +10,12 @@ if __name__ == "__main__":
     )
     cursor = mydb.cursor()
     # creating table for shoes with id name and price.
-    # name and price cant be null because every shoe needs them.
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS shoe (
-        shoe_id INT PRIMARY KEY,
+        shoe_id INT,
         shoe_name VARCHAR(31) NOT NULL,
-        price SMALLINT NOT NULL
+        price SMALLINT NOT NULL,
+        PRIMARY KEY (shoe_id)
     )
     """)
     # !!!Commit the transaction to save the changes to the database!!!

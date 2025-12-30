@@ -9,8 +9,9 @@ if __name__ == "__main__":
         port="3307",
     )
     cursor = mydb.cursor()
-    # combining inventory and upcoming releases lists.
-    # creating a master list of all shoes for marketing.
+    # Here we need to use a union in order to add more rows. We create a table with name, src.
+    # In the first SELECT the source is always inventory since we take only from shoe,
+    # and in the second its always Upcoming Release since we take from upcoming.
     cursor.execute("""
     SELECT 
         shoe_name AS name,

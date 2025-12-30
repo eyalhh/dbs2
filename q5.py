@@ -10,7 +10,7 @@ if __name__ == "__main__":
     )
     cursor = mydb.cursor()
     # adding preorder available column to upcoming table.
-    # using bit type for boolean flag, default is 0.
+    # type is bit and default is 0 (assignment) 
     cursor.execute("""
     ALTER TABLE upcoming
     ADD COLUMN pre_order_available BIT DEFAULT 0

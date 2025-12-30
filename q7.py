@@ -10,7 +10,15 @@ if __name__ == "__main__":
     )
     cursor = mydb.cursor()
     # calculating total revenue per customer.
-    # checking how much each person spent, using coalesce for 0s.
+    # the main idea here is that we will create a table which will look like:
+    # customer_id, first_name, last_name, total_amout_spent
+    # where total_amount_spent is the amount of money the customer spent in total.
+    # We can do this by first taking all customers, joining then with the customers that actually ordered
+    # so that now we have a table with order IDs and all customers, we join this with the order_shoe
+    # so that now in our table we have shoe_ids as well. Finally we connect this with the shoes table
+    # to also get the price of a shoe ordered. Now we have rows in the format:
+    # first name, last name, customer id, shoe id, shoe price [and some more] and now we can sum
+    # the price of shoes per customer.
     cursor.execute("""
     SELECT 
         c.first_name,

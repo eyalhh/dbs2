@@ -13,9 +13,10 @@ if __name__ == "__main__":
     # each city must belong to a country.
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS city (
-        city_id INT PRIMARY KEY,
+        city_id INT,
         city_name VARCHAR(63) NOT NULL,
         country_id INT NOT NULL,
+        PRIMARY KEY (city_id),
         FOREIGN KEY (country_id) REFERENCES country(country_id)
     )
     """)

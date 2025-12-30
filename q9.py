@@ -9,8 +9,9 @@ if __name__ == "__main__":
         port="3307",
     )
     cursor = mydb.cursor()
-    # counting available sizes for each shoe.
-    # listing all shoes and how many sizes they have in stock.
+    # Here, we want to have a table with shoe sizes and shoe names.
+    # We can do that by taking the shoes table, and joining it (left join since we want all shoes)
+    # with the shoe_size table.
     cursor.execute("""
     SELECT 
         s.shoe_name,

@@ -13,8 +13,9 @@ if __name__ == "__main__":
     # storing order id and when it happened.
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS company_order (
-        order_id INT PRIMARY KEY,
-        order_date DATETIME NOT NULL
+        order_id INT,
+        order_date DATETIME NOT NULL,
+        PRIMARY KEY (order_id)
     )
     """)
     # !!!Commit the transaction to save the changes to the database!!!

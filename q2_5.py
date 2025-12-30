@@ -13,8 +13,9 @@ if __name__ == "__main__":
     # just need id and name.
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS country (
-        country_id INT PRIMARY KEY,
-        country_name VARCHAR(63) NOT NULL
+        country_id INT,
+        country_name VARCHAR(63) NOT NULL,
+        PRIMARY KEY (country_id)
     )
     """)
     # !!!Commit the transaction to save the changes to the database!!!
